@@ -1,2 +1,2 @@
-# inventory
+# Inventory Management
  
