@@ -1,0 +1,140 @@
+<style>
+body
+{
+	background-image: linear-gradient(to right, #ff5722, #ff9800);
+	margin-top: 50px !important;
+}
+.title
+{
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+}
+.register-left
+{
+	text-align: center;
+	color: #fff;
+	padding: 30px;
+}
+
+.register-left padding
+{
+	padding 20px 20px 0;
+}
+.register-left .btn-primary
+{
+	border-radius: 1.5rem;
+	border: none;
+	width: 120px;
+	background: #f8f8f8;
+	font-weight: 600;
+	color: #555;
+	margin-top: 20px;
+	padding: 10px;
+}
+.register-left .btn-primary:hover
+{
+	background: #000;
+}
+.register-right
+{
+	border: none;
+	background: #f8f8f8;
+	margin-right:20%;
+	margin-left:20%;
+	padding: 50px;
+}
+.register-right h2
+{
+	text-align: center;
+	margin-bottom: 10px;
+	color: #555;
+}
+.register-form
+{
+	padding: 30px;
+}
+.register-right .btn-primary
+{
+
+	border: none;
+	background: #ff9800 ;
+	font-weight: 600;
+	font-size:20px;
+	color: #fff;
+	margin-top: 20px;
+	margin-right:20px;
+	margin-left:20px;
+	padding: 10px;
+}
+.register-right .btn-primary:hover
+{
+	background: #ff5722;
+}
+.textbox
+{
+
+    padding: 10px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+	width: 90%;
+	height:40px;
+}
+@keyframes mover
+{
+	0%{transform: translateY(0);}
+	100%{transform: translateY(-20px);}
+}
+
+
+</style>
+<html>
+<head>
+    <title>Inventory Management - Login</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <h3 class="title">Inventory Management Web Application</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-7 register-right">
+        <h2>Product Movements</h2>
+            <form action = "/movement" method="POST">
+
+                <div class="register-form">
+                    <div class="form-group">
+                        <input type="text" class="textbox" name="id" placeholder="Product ID">
+                    </div>
+                    <div class="form-group">
+                        <select class="custom-select" name="from" style="width:90%;height:40px;">
+                            <option value=""> From Location </option>
+                            {% for location in locations %}
+                                <option value="{{ location[1] }} ">{{ location[1] }} </option>
+                                {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="custom-select" name="to" style="width:90%;height:40px;margin-top:15px;">
+                            <option value=""> To Location</option>
+                            {% for location in locations %}
+                                <option value="{{ location[1] }} ">{{ location[1] }} </option>
+                                {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="textbox" name="qty" placeholder="Quantity">
+                    </div>
+                    <button type="submit" name="button" value="Move" class="btn btn-primary">Move</button>
+                    <button type="submit" name="button" value="View_All" class="btn btn-primary">View All</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
