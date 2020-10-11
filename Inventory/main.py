@@ -58,7 +58,7 @@ def register_db():
     password = request.form['password']
     email = request.form['email']
     if email == "" or password == "" or username == "":
-        return "<script>window.alert('Check All fields');window.location='/loc';</script>"
+        return "<script>window.alert('Check All fields');window.location='/';</script>"
     else:
 
         values = "INSERT INTO `login`(`username`,`email`, `password`) VALUES('" + username + "','" + email + "','" + password + "')"
@@ -74,7 +74,7 @@ def login_db():
     email = request.form['email']
     password = request.form['password']
     if email == "" or password == "":
-        return "<script>window.alert('Check All fields');window.location='/loc';</script>"
+        return "<script>window.alert('Check All fields');window.location='/login';</script>"
     else:
 
         cursor = mysql.connect().cursor()
