@@ -74,7 +74,7 @@ def login_db():
     email = request.form['email']
     password = request.form['password']
     if email == "" or password == "":
-        return "<script>window.alert('Check All fields');window.location='/loc';</script>"
+        return "<script>window.alert('Check All fields');window.location='/login';</script>"
     else:
 
         cursor = mysql.connect().cursor()
