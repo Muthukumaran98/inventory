@@ -37,7 +37,7 @@ def product_location():
     local = "SELECT * FROM location"
     cursor.execute(local)
     locations = cursor.fetchall()
-    return render_template("products.html", title='Location', locations=locations)
+    return render_template("products.html", locations=locations)
 
 
 @app.route("/movement")
@@ -47,7 +47,7 @@ def product_movement():
     local = "SELECT * FROM location"
     cursor.execute(local)
     locations = cursor.fetchall()
-    return render_template("product_movement.html", title='Location', locations=locations)
+    return render_template("product_movement.html", locations=locations)
 
 
 @app.route("/", methods=['POST'])
