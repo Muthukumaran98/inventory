@@ -1,4 +1,4 @@
-# Inventory Management
+# Inventory Management using Flask
  
 
 ![Get it on Google Play](https://github.com/Muthukumaran98/inventory/blob/master/screenshots/Screenshot%20(101).png)
